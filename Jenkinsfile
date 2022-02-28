@@ -1,6 +1,6 @@
 pipeline{
   agent any{
-    stages{
+  stages{
       stage('Testing'){
         steps{
           echo 'running Tests'
