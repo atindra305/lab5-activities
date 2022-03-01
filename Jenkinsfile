@@ -10,7 +10,7 @@ pipeline{
       stage('Build'){
         steps{
             echo 'Building jar files...'
-//             sh 'mvn package'
+            sh 'mvn package'
         }
       }
   }
