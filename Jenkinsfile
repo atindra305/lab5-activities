@@ -1,17 +1,10 @@
-pipeline{
-  agent any
-  stages{
-      stage('Testing'){
-        steps{
-          echo 'running Tests'
-          sh 'mvn test'
+pipeline { 
+    agent any  
+    stages { 
+        stage('Build') { 
+            steps { 
+               echo 'This is a minimal pipeline.' 
+            }
         }
-      }
-      stage('Build'){
-        steps{
-          echo 'Building jar files...'
-          sh 'mvn package'
-        }
-      }
-  }
-}    
+    }
+}
