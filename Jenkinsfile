@@ -1,28 +1,17 @@
-pipeline {
-    agent any
-    stages {
-        stage ('Compile Stage') {
-
-            steps {
-                withMaven(maven : '3.8.4') {
-                    sh 'mvn clean compile'
-                }
-            }
+pipeline{
+  agent any
+  stages{
+      stage('Testing'){
+        steps{
+            echo 'running Tests'
+//             sh 'mvn test'
         }
-        stage ('Testing Stage') {
-
-            steps {
-                withMaven(maven : '3.8.4') {
-                    sh 'mvn test'
-                }
-            }
+      }
+      stage('Build'){
+        steps{
+            echo 'Building jar files...'
+//             sh 'mvn package'
         }
-        stage ('Install Stage') {
-            steps {
-                withMaven(maven : '3.8.4') {
-                    sh 'mvn install'
-                }
-            }
-        }
-    }
+      }
+  }
 }
